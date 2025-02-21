@@ -114,9 +114,7 @@ public class BankListController {
         // a Workflow Execution involves sending a request to the Temporal Service,
         // much like happens when you start the Workflow Execution. We must specify the
         // Workflow ID corresponding to the Workflow Execution we want to Signal (i.e.,
-        // the one that was launched in the Starter class). I hardcoded that Workflow ID
-        // here since I don't have access to the TransactionDetails instance used by the
-        // Starter to create the Workflow ID.
+        // the one that was launched in the Starter class).
         WorkflowServiceStubs service = WorkflowServiceStubs.newLocalServiceStubs();
         WorkflowClient client = WorkflowClient.newInstance(service);
         client.newUntypedWorkflowStub(workflowId).signal("approve", managerName);
